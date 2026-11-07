@@ -40,12 +40,14 @@
             </intent-filter>
         </activity>
 
+        <!-- 播放页跟随重力感应转屏。user 尊重系统的「方向锁定」——锁着就永远竖屏；
+             fullSensor 不看用户锁定，锁着也能横过来。 -->
         <activity
             android:name="com.huangguo.mobile.VlcPlayerActivity"
             android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize|keyboardHidden|uiMode"
             android:exported="false"
             android:launchMode="singleTask"
-            android:screenOrientation="user"
+            android:screenOrientation="fullSensor"
             android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen"/>
 
         <!-- spider 宿主，独立进程。Android WebView 全 app 共享渲染主线程，
